@@ -1,6 +1,4 @@
 
-Index.html
-100%
 <title>FLORISHINE</title>
 
 <style>
@@ -13,6 +11,7 @@ Index.html
 
 body {
     font-family: Arial, sans-serif;
+    font-size: 16px;
     background: #fffaf7;
     color: #224d30;
     line-height: 1.6;
@@ -28,6 +27,8 @@ header {
     gap: 15px;
     position: sticky;
     top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
 }
 
 .logo {
@@ -39,7 +40,7 @@ header {
 nav a {
     text-decoration: none;
     color: #224d30;
-    margin: 8px;
+    margin: 7px;
     font-size: 14px;
     font-weight: bold;
 }
@@ -51,7 +52,7 @@ nav a:hover {
 section {
     padding: 65px 8%;
     text-align: center;
-    scroll-margin-top: 80px;
+    scroll-margin-top: 85px;
 }
 
 h1, h2, h3 {
@@ -60,16 +61,25 @@ h1, h2, h3 {
 
 h2 {
     font-size: 32px;
+    line-height: 1.3;
     margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 21px;
+    line-height: 1.4;
 }
 
 p {
     color: #657568;
+    font-size: 16px;
+    line-height: 1.7;
     margin-bottom: 15px;
 }
 
 .label {
     color: #df6a8d;
+    font-size: 13px;
     font-weight: bold;
     letter-spacing: 2px;
     margin-bottom: 10px;
@@ -83,18 +93,27 @@ p {
     border-radius: 25px;
     text-decoration: none;
     margin: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    transition: .3s;
+    border: none;
+    cursor: pointer;
 }
 
 .btn:hover {
     background: #b6315b;
+    transform: translateY(-2px);
 }
 
 .green {
     background: #086132;
 }
 
-/* HOME */
+.green:hover {
+    background: #064522;
+}
 
+/* HOME */
 .hero {
     background: linear-gradient(120deg, #eff4eb, #fff0f3);
     display: flex;
@@ -110,7 +129,7 @@ p {
 }
 
 .hero h1 {
-    font-size: 48px;
+    font-size: 46px;
     line-height: 1.2;
     margin-bottom: 20px;
 }
@@ -127,7 +146,6 @@ p {
 }
 
 /* ABOUT */
-
 .about {
     background: white;
     display: flex;
@@ -146,8 +164,19 @@ p {
     flex: 1;
 }
 
-/* CARDS */
+.about-details {
+    margin-top: 20px;
+    padding: 18px;
+    background: #eff4eb;
+    border-left: 4px solid #df6a8d;
+    border-radius: 10px;
+}
 
+.about-details h3 {
+    margin-bottom: 8px;
+}
+
+/* GENERAL CARDS */
 .light {
     background: #eff4eb;
 }
@@ -164,6 +193,12 @@ p {
     padding: 25px;
     border-radius: 15px;
     text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,.05);
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
 }
 
 .card img {
@@ -174,50 +209,77 @@ p {
 }
 
 .card h3 {
+    font-size: 19px;
     margin-bottom: 10px;
 }
 
-/* PROTOTYPE */
+.card p {
+    font-size: 15px;
+}
 
+/* PRODUCTS AND SERVICES */
+.products {
+    background: #eff4eb;
+}
+
+.section-intro {
+    max-width: 750px;
+    margin: 0 auto 25px;
+}
+
+.product-card img {
+    width: 100%;
+    max-width: 180px;
+    height: 130px;
+    object-fit: contain;
+}
+
+/* PROTOTYPE */
 .prototype {
     background: white;
 }
 
+.app-heading {
+    margin-top: 35px;
+    margin-bottom: 8px;
+    font-size: 22px;
+}
+
 .gallery {
     display: flex;
-    gap: 15px;
-    overflow-x: auto;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
     padding: 20px 0;
     margin: 15px 0;
 }
 
 .gallery img {
-    height: 230px;
-    width: 160px;
+    width: 260px;
+    height: 200px;
     object-fit: contain;
     border-radius: 12px;
     background: #eff4eb;
-    padding: 5px;
-    flex-shrink: 0;
-}
-
-.desktop img {
-    width: 300px;
-    height: 200px;
+    padding: 10px;
+    border: 2px solid #e2f3e5;
 }
 
 /* CTA */
-
 .cta {
     background: #086132;
     color: white;
 }
 
-.cta h2, .cta p {
+.cta h2,
+.cta p {
     color: white;
 }
 
 /* VIDEO */
+.video-section {
+    background: #eff4eb;
+}
 
 video {
     width: 100%;
@@ -227,14 +289,26 @@ video {
 }
 
 /* DOWNLOAD */
-
 .download-card {
     background: #eff4eb;
     padding: 30px;
     border-radius: 15px;
 }
 
+.download-card h3 {
+    margin-bottom: 10px;
+}
+
 /* TEAM */
+.team {
+    background: #eff4eb;
+}
+
+.team .cards {
+    max-width: 950px;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .team img {
     width: 130px;
@@ -245,38 +319,99 @@ video {
 }
 
 /* CONTACT */
-
 .contact {
     background: white;
 }
 
-.contact-info {
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    max-width: 1000px;
+    margin: 30px auto 0;
+    text-align: left;
+}
+
+.contact-info,
+.contact-form {
     background: #eff4eb;
     padding: 30px;
     border-radius: 15px;
-    max-width: 700px;
-    margin: auto;
+}
+
+.contact-info h3,
+.contact-form h3 {
+    margin-bottom: 20px;
 }
 
 .contact-info a {
     color: #086132;
+    overflow-wrap: anywhere;
+}
+
+.contact-form label {
+    display: block;
+    font-weight: bold;
+    color: #224d30;
+    font-size: 15px;
+    margin: 12px 0 5px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #c9dfcd;
+    border-radius: 8px;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    background: white;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    outline: 2px solid #df6a8d;
+    border-color: #df6a8d;
+}
+
+.contact-form button {
+    margin-top: 18px;
+    width: 100%;
 }
 
 /* FOOTER */
-
 footer {
-    background: #085a30;
-    color: white;
-    padding: 25px;
+    background: #b9f6ca;
+    color: #086132;
+    padding: 30px 20px;
     text-align: center;
 }
 
-footer p, footer h3 {
-    color: white;
+footer h3 {
+    color: #086132;
+    font-size: 23px;
+    margin-bottom: 8px;
+}
+
+footer p {
+    color: #245b38;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.footer-school {
+    font-weight: bold;
+    margin-top: 12px;
 }
 
 /* RESPONSIVE */
-
 @media (max-width: 768px) {
     header {
         justify-content: center;
@@ -289,31 +424,65 @@ footer p, footer h3 {
         flex-wrap: wrap;
     }
 
-    .hero, .about {
+    .hero,
+    .about {
         flex-direction: column;
         text-align: center;
     }
 
     .hero h1 {
-        font-size: 38px;
+        font-size: 36px;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
     }
 
     .cards {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    h2 {
+        font-size: 29px;
+    }
 }
 
 @media (max-width: 500px) {
-    .cards {
-        grid-template-columns: 1fr;
-    }
-
     section {
         padding: 45px 6%;
     }
 
+    .hero h1 {
+        font-size: 31px;
+    }
+
     h2 {
-        font-size: 27px;
+        font-size: 26px;
+    }
+
+    h3 {
+        font-size: 19px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    .btn {
+        font-size: 14px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery img {
+        width: 100%;
+        max-width: 300px;
     }
 }
 </style>
@@ -328,10 +497,10 @@ footer p, footer h3 {
     <nav>
         <a href="#home">Home</a>
         <a href="#about">About</a>
-        <a href="#solution">Solution</a>
-        <a href="#features">Features</a>
+        <a href="#products">Products & Services</a>
         <a href="#prototype">Prototype</a>
         <a href="#team">Team</a>
+        <a href="#video">Video</a>
         <a href="#contact">Contact</a>
         <a href="#download">Download</a>
     </nav>
@@ -341,12 +510,18 @@ footer p, footer h3 {
 <section class="hero" id="home">
     <div>
         <p class="label">WELCOME TO FLORISHINE</p>
-        <h1>Bringing the Beauty of <span>Nature</span> Closer to You.</h1>
+
+        <h1>
+            Bringing the Beauty of
+            <span>Nature</span> Closer to You.
+        </h1>
+
         <p>
             Discover beautiful real flowers and plants with
             FLORISHINE. Find the perfect bloom and make
             every moment meaningful.
         </p>
+
         <a href="#about" class="btn">Explore More</a>
         <a href="#prototype" class="btn green">View Prototype</a>
     </div>
@@ -365,122 +540,75 @@ footer p, footer h3 {
     <div>
         <p class="label">GET TO KNOW US</p>
         <h2>About FLORISHINE</h2>
+
         <p>
-            FLORISHINE is an online promotional platform
-            designed to showcase real flowers and plants
-            from Save for Less Flower Shop.
+            FLORISHINE is a plant shop dedicated to bringing the beauty of nature closer to everyone through real, living plants and gardening essentials.
         </p>
+
         <p>
-            Our goal is to make plant shopping easier by
-            allowing customers to explore products and
-            conveniently connect with the shop.
+           Our goal is to make plant shopping easy and enjoyable while inspiring everyone to grow plants and create greener spaces.
         </p>
+
         <p>
-            Let every bloom bring beauty, happiness,
-            and meaning to every special moment.
+            "Bringing the Beauty of Nature Closer to You.“
         </p>
-        <a href="#features" class="btn">Our Features</a>
+
+        <div class="about-details">
+            <h3>Our Mission</h3>
+            <p>
+                To provide quality living plants and reliable gardening essentials while inspiring people to embrace nature, nurture plant life, and create greener, more beautiful surroundings.
+            </p>
+
+            <h3>Our Vision</h3>
+            <p>
+                To become a trusted and recognized plant shop that brings people closer to nature, inspires greener homes and beautiful spaces, and builds a growing community of individuals who share a passion for plants and sustainable living.
+            </p>
+        </div>
+
+        <a href="#products" class="btn">Our Products</a>
     </div>
 </section>
 
-<!-- SOLUTION -->
-<section class="light" id="solution">
-    <p class="label">THE PROBLEM AND OUR ANSWER</p>
-    <h2>Our Solution</h2>
-    <p>
-        FLORISHINE makes plant shopping easier and helps
-        small sellers promote their flowers and plants online.
+<!-- PRODUCTS AND SERVICES -->
+<section class="products" id="products">
+    <p class="label">WHAT WE OFFER</p>
+    <h2>Products & Services</h2>
+
+    <p class="section-intro">
+        FLORISHINE offers real flowers and plants for different
+        occasions and gardening needs, with convenient online
+        shopping services from Save for Less Flower Shop.
     </p>
 
     <div class="cards">
-        <div class="card">
-            <img src="problem.jpg" alt="Problem">
-            <h3>The Problem</h3>
+
+        <div class="card product-card">
+            <img src="product.jpg" alt="Real Flowers and Plants">
+            <h3>Flower and Plant Selling</h3>
             <p>
-                Limited online presence makes it difficult
-                for customers to discover available products.
+                Offers real flowers and ornamental plants
+                for customers and plant lovers.
             </p>
         </div>
 
-        <div class="card">
-            <img src="solution.jpg" alt="Solution">
-            <h3>Our Solution</h3>
+        <div class="card product-card">
+            <img src="catalog.jpg" alt="Product Catalog">
+            <h3>Online Product Browsing</h3>
             <p>
-                An online platform where customers can
-                explore plants and gardening products.
+                Allows customers to explore available
+                flowers and plants online.
             </p>
         </div>
-    </div>
-</section>
 
-<!-- WHY FLORISHINE -->
-<section>
-    <p class="label">WHY CHOOSE US</p>
-    <h2>Why FLORISHINE?</h2>
-    <p>Discover flowers and plants conveniently from home.</p>
-
-    <div class="cards">
-        <div class="card">
-            <img src="discover.png" alt="Discovery">
-            <h3>Easy Discovery</h3>
-            <p>Explore flowers and plants in one platform.</p>
+        <div class="card product-card">
+            <img src="order.jpg" alt="Online Ordering">
+            <h3>Online Ordering</h3>
+            <p>
+                Provides a convenient way for customers
+                to place flower and plant orders.
+            </p>
         </div>
 
-        <div class="card">
-            <img src="Cart1.jpg" alt="Shopping">
-            <h3>Convenient Shopping</h3>
-            <p>View products and connect with the shop.</p>
-        </div>
-
-        <div class="card">
-            <img src="heart.png" alt="Nature">
-            <h3>Love for Nature</h3>
-            <p>Discover beautiful flowers and real plants.</p>
-        </div>
-    </div>
-</section>
-
-<!-- FEATURES -->
-<section class="light" id="features">
-    <p class="label">EXPLORE OUR PLATFORM</p>
-    <h2>Features & Benefits</h2>
-
-    <div class="cards">
-        <div class="card">
-            <img src="catalog.jpg" alt="Catalog">
-            <h3>Product Catalog</h3>
-            <p>Browse available flowers and plants.</p>
-        </div>
-
-        <div class="card">
-            <img src="order.jpg" alt="Ordering">
-            <h3>Easy Ordering</h3>
-            <p>Make ordering convenient for customers.</p>
-        </div>
-
-        <div class="card">
-            <img src="inventory.jpg" alt="Inventory">
-            <h3>Inventory Management</h3>
-            <p>Organize and monitor products.</p>
-        </div>
-
-        <div class="card">
-            <img src="sale.jpg" alt="Sales">
-            <h3>Sales Monitoring</h3>
-            <p>View and monitor sales information.</p>
-        </div>
-
-        <div class="card">
-            <img src="platform.jpg" alt="Platform">
-            <h3>Online Platform</h3>
-            <p>Promote flowers and plants online.</p>
-        </div>
-
-        <div class="card">
-            <img src="product.jpg" alt="Information">
-            <h3>Product Information</h3>
-            <p>View product details before ordering.</p>
-        </div>
     </div>
 </section>
 
@@ -488,14 +616,16 @@ footer p, footer h3 {
 <section class="prototype" id="prototype">
     <p class="label">SEE HOW IT WORKS</p>
     <h2>Explore Our Prototype</h2>
+
     <p>Discover our customer and seller interfaces.</p>
 
-    <h3>Customer App</h3>
+    <!-- CUSTOMER APP -->
+    <h3 class="app-heading">Customer App</h3>
     <p>Explore products and experience convenient shopping.</p>
 
     <div class="gallery">
         <img src="login.png" alt="Customer Login">
-        <img src="welcome.png" alt="Welcome">
+        <img src="welcome.png" alt="Customer Welcome">
         <img src="Home.png" alt="Customer Home">
         <img src="addcart.png" alt="Customer Cart">
     </div>
@@ -505,12 +635,11 @@ footer p, footer h3 {
         Open Customer App
     </a>
 
-    <br><br>
-
-    <h3>Seller App</h3>
+    <!-- SELLER APP -->
+    <h3 class="app-heading">Seller App</h3>
     <p>Manage products, inventory, and sales.</p>
 
-    <div class="gallery desktop">
+    <div class="gallery">
         <img src="pc1.png" alt="Seller Dashboard">
         <img src="pc2.png" alt="Seller Products">
         <img src="pc3.png" alt="Seller Inventory">
@@ -523,23 +652,29 @@ footer p, footer h3 {
     </a>
 </section>
 
-<!-- CTA -->
+<!-- CALL TO ACTION -->
 <section class="cta">
-    <h2>Let Every Bloom Shine!</h2>
+    <h2>"Bringing the Beauty 
+of Nature 
+Closer to 
+You.“</h2>
+
     <p>
         Discover the beauty of flowers and plants
         with FLORISHINE. Bring nature closer to you.
     </p>
-    <a href="#download" class="btn">Get Started</a>
+
+    <a href="#contact" class="btn">Contact Us</a>
 </section>
 
-<!-- VIDEO -->
-<section class="light">
+<!-- PROMOTIONAL VIDEO -->
+<section class="video-section" id="video">
     <p class="label">WATCH OUR PROMOTION</p>
     <h2>Discover FLORISHINE</h2>
+
     <p>Get to know more about our platform.</p>
 
-    <video controls>
+    <video controls preload="metadata">
         <source src="Florishine (1).mp4" type="video/mp4">
         Your browser does not support video.
     </video>
@@ -551,9 +686,11 @@ footer p, footer h3 {
     <h2>Explore Our Apps</h2>
 
     <div class="cards">
+
         <div class="download-card">
             <h3>Customer App</h3>
             <p>Explore flowers, plants, and product details.</p>
+
             <a href="https://www.figma.com/design/FLpDqsEvRs9W13esNi4opw/Florishine?node-id=0-1&t=Kkxa6gS9ojc1HIzl-1"
                target="_blank" rel="noopener noreferrer" class="btn">
                 Open Customer App
@@ -563,78 +700,154 @@ footer p, footer h3 {
         <div class="download-card">
             <h3>Seller App</h3>
             <p>Manage products, inventory, and sales.</p>
+
             <a href="https://www.figma.com/design/T2SogGQRMWbLEp41hq9epc/Florishine?node-id=0-1&t=muw3MJBuLiHH8gil-1"
                target="_blank" rel="noopener noreferrer" class="btn green">
                 Open Seller App
             </a>
         </div>
+
     </div>
 </section>
 
-<!-- TEAM -->
-<section class="light" id="team">
+<!-- OUR TEAM -->
+<section class="team" id="team">
     <p class="label">MEET OUR TEAM</p>
     <h2>Our Team</h2>
+
     <p>The people behind FLORISHINE.</p>
 
     <div class="cards">
+
         <div class="card">
-            <img src="nicole.png" alt="Nicole">
+            <img src="nicole.png" alt="Norlie Nicole O. Balderas">
             <h3>Norlie Nicole O. Balderas</h3>
             <p>Team Member</p>
         </div>
 
         <div class="card">
-            <img src="jenny.png" alt="Jenny">
+            <img src="jenny.png" alt="Jenny Babe Buenaobra">
             <h3>Jenny Babe Buenaobra</h3>
             <p>Team Member</p>
         </div>
 
         <div class="card">
-            <img src="Gab.png" alt="Angelica">
+            <img src="Gab.png" alt="Angelica B. Gabarlan">
             <h3>Angelica B. Gabarlan</h3>
             <p>Team Member</p>
         </div>
+
     </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact">
+<!-- CONTACT US -->
+<section class="contact" id="contact">
     <p class="label">WE'D LOVE TO HEAR FROM YOU</p>
     <h2>Contact Us</h2>
 
-    <div class="contact-info">
-        <h3>Contact Information</h3>
-        <p><strong>Address:</strong><br>
-        Prk Pag-asa, Brgy. Gredu, Poblacion,
-        Panabo City, Davao del Norte</p>
+    <p>
+        Have questions or inquiries? Contact Save for Less Flower Shop.
+    </p>
 
-        <p><strong>Phone:</strong><br>09122390952</p>
+    <div class="contact-container">
 
-        <p><strong>Email:</strong><br>
-        florishineshop@gmail.com</p>
+        <!-- CONTACT INFORMATION -->
+        <div class="contact-info">
+            <h3>Contact Information</h3>
 
-        <p><strong>Facebook:</strong><br>
-        <a href="https://www.facebook.com/profile.php?id=61596194687714"
-           target="_blank" rel="noopener noreferrer">
-            Visit FLORISHINE Facebook Page
-        </a></p>
+            <p>
+                <strong>Business Name:</strong><br>
+                Save for Less Flower Shop
+            </p>
 
-        <a href="https://www.facebook.com/profile.php?id=61596194687714"
-           target="_blank" rel="noopener noreferrer" class="btn">
-            Visit Our Facebook Page
-        </a>
+            <p>
+                <strong>Address:</strong><br>
+                Prk Pag-asa, Brgy. Gredu, Poblacion,
+                Panabo City, Davao del Norte
+            </p>
+
+            <p>
+                <strong>Phone:</strong><br>
+                <a href="tel:09122390952">09122390952</a>
+            </p>
+
+            <p>
+                <strong>Email:</strong><br>
+                <a href="mailto:florishineshop@gmail.com">
+                    florishineshop@gmail.com
+                </a>
+            </p>
+
+            <p>
+                <strong>Facebook:</strong><br>
+                <a href="https://www.facebook.com/profile.php?id=61596194687714"
+                   target="_blank" rel="noopener noreferrer">
+                    Visit FLORISHINE Facebook Page
+                </a>
+            </p>
+        </div>
+
+        <!-- INQUIRY FORM -->
+        <div class="contact-form">
+            <h3>Send Us an Inquiry</h3>
+
+            <form action="mailto:florishineshop@gmail.com"
+                  method="post"
+                  enctype="text/plain">
+
+                <label for="fullname">Full Name</label>
+                <input type="text"
+                       id="fullname"
+                       name="Full Name"
+                       placeholder="Enter your full name"
+                       required>
+
+                <label for="email">Email Address</label>
+                <input type="email"
+                       id="email"
+                       name="Email"
+                       placeholder="Enter your email address"
+                       required>
+
+                <label for="inquiry">Inquiry Type</label>
+                <select id="inquiry" name="Inquiry Type" required>
+                    <option value="">Select inquiry type</option>
+                    <option>Flower Inquiry</option>
+                    <option>Plant Inquiry</option>
+                    <option>Product Availability</option>
+                    <option>Other</option>
+                </select>
+
+                <label for="message">Your Message</label>
+                <textarea id="message"
+                          name="Message"
+                          placeholder="Write your message here..."
+                          required></textarea>
+
+                <button type="submit" class="btn">
+                    Submit Inquiry
+                </button>
+            </form>
+        </div>
+
     </div>
 </section>
 
-<!-- FOOTER -->
+<!-- DNSC FOOTER -->
 <footer>
     <h3>FLORISHINE</h3>
-    <p>Bloom Brighter, Live Happiez</p>
-    <p>© 2026 FLORISHINE. All Rights Reserved.</p>
+
     <p>Bringing the Beauty of Nature Closer to You.</p>
+
+    <p class="footer-school">
+        DAVAO DEL NORTE STATE COLLEGE
+    </p>
+
+    <p>Institute of Computing</p>
+    <p>“Inspiring Change, Creating Futures”</p>
+    <p>FLORISHINE | ISSPEC3 Final Project</p>
+    <p>© 2026 FLORISHINE. All Rights Reserved.</p>
 </footer>
 
 </body>
 </html>
-Displaying Index.html.
